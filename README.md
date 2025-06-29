@@ -10,10 +10,9 @@ Full list with tips and emoji guides:
 | Variable            | Description                                      | Example                           | Required? |
 |---------------------|--------------------------------------------------|-----------------------------------|-----------|
 | `TZ`                | 🕒 [Timezone ](https://www.php.net/manual/en/timezones.php)    | `Asia/Jakarta`                    | ✅ Yes     |
-|---------------------|-----------------------------------------------------------------------------------------|-------------------------|
-| `ON_VIRUS_DETECT`   | ⚙️  Action if suspicious plugins are found:<br/>`RENAME`, `DELETE`, or `CRASH`          | `RENAME`                |
-| `WEBHOOK_URL`       | 🔔 Discord Webhook for notifications (virus, crash, etc.)                               | *(Your Discord URL)*    |
-| `ANTIVIRUS_BYPASS`  | 🛡️  *(Special)* Bypass all protection if set to `true` + see `P_SERVER_LOCATION` below  | `true`                  |
+| `ON_VIRUS_DETECT`   | ⚙️  Action if suspicious plugins are found:<br/>`RENAME`, `DELETE`, or `CRASH`          | `RENAME`                | ✅ Yes     |
+| `WEBHOOK_URL`       | 🔔 Discord Webhook for notifications (virus, crash, etc.)                               | *(Your Discord URL)*    | ✅ Yes     |
+| `ANTIVIRUS_BYPASS`  | 🛡️  *(Special)* Bypass all protection if set to `true` + see `P_SERVER_LOCATION` below  | `true`                  | Optional    |
 ---
 
 ### ✈️ **Special: Region/Location-based Bypass Mode**
