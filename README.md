@@ -30,4 +30,4 @@ Set **BOTH**:
 > ```
 >
 > 🔥 This will ONLY show banner, system info, java version, and startup command (then launch your app).
-> All protection features will be **disabled** for this container!
+> All protection features will be **disabled** for this docker!
