@@ -25,8 +25,8 @@ Set **BOTH**:
 > 💡 *Example:*
 >
 > ```bash
-> -e P_SERVER_LOCATION=BYPASS_REGION_ID
-> -e ANTIVIRUS_BYPASS=true
+> Locate(On admin panel)= BYPASS_REGION_ID
+> On environment ANTIVIRUS_BYPASS=true
 > ```
 >
 > 🔥 This will ONLY show banner, system info, java version, and startup command (then launch your app).
