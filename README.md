@@ -19,7 +19,7 @@ Full list with tips and emoji guides:
 
 If you want to **skip all protection** (no plugin/virus check, no license check, no log watcher)  
 Set **BOTH**:
-- `P_SERVER_LOCATION` **starting with** `BYPASS_REGION_` (e.g. `BYPASS_REGION_ID`, `BYPASS_REGION_TEST`)
+- `Location Server` **starting with** `BYPASS_REGION_` (e.g. `BYPASS_REGION_ID`, `BYPASS_REGION_TEST`)
 - and `ANTIVIRUS_BYPASS=true`
 
 > 💡 *Example:*
