@@ -2,7 +2,7 @@
 
 Set these environment variables to control how your custom Docker image behaves!  
 Full list with tips and emoji guides:
-
+> Free usage without Licensi With Default port [ 25565/19132 ]
 ---
 
 ### 🏁 **Basic & Required**
