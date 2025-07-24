@@ -4,7 +4,12 @@ Set these environment variables to control how your custom Docker image behaves!
 Full list with tips and emoji guides:
 > Free usage without Licensi With Default port [ 25565/19132 ]
 ---
-
+````
+Java21|ghcr.io/vanes430/protection:java_21
+Java17|ghcr.io/vanes430/protection:java_17
+Java11|ghcr.io/vanes430/protection:java_11
+Java8|ghcr.io/vanes430/protection:java_8
+````
 ### 🏁 **Basic & Required**
 
 | Variable            | Description                                      | Example                           | Required? |
