@@ -5,6 +5,8 @@ Full list with tips and emoji guides:
 > Free usage without Licensi With Default port [ 25565/19132 ]
 ---
 ````
+GraalJDK24|ghcr.io/vanes430/protection:java_graaljdk24
+GraalJDK21|ghcr.io/vanes430/protection:java_graaljdk21
 Java21|ghcr.io/vanes430/protection:java_21
 Java17|ghcr.io/vanes430/protection:java_17
 Java11|ghcr.io/vanes430/protection:java_11
@@ -35,4 +37,4 @@ Set **BOTH**:
 > ```
 >
 > 🔥 This will ONLY show banner, system info, java version, and startup command (then launch your app).
-> All protection features will be **disabled** for this docker!
+> All protection features will be **disabled** for this type group!
