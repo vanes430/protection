@@ -5,6 +5,7 @@ Full list with tips and emoji guides:
 > Free usage without Licensi With Default port [ 25565/19132 ]
 ---
 ````
+GraalJDK25|ghcr.io/vanes430/protection:java_graaljdk25
 GraalJDK24|ghcr.io/vanes430/protection:java_graaljdk24
 GraalJDK21|ghcr.io/vanes430/protection:java_graaljdk21
 Java21|ghcr.io/vanes430/protection:java_21
