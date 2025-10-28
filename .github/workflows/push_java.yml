@@ -1,7 +1,6 @@
 name: docker build
 
 on:
-  workflow_dispatch:
   workflow_run:
     workflows: ["update entrypoint"]
     types: [completed]
