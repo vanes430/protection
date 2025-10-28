@@ -1,7 +1,7 @@
-name: update entrypoint
+name: cleanup
 on:
   workflow_run:
-    workflows: ["docker1 build1"]
+    workflows: ["update entrypoint"]
     types:
       - completed
 
