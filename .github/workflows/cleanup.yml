@@ -1,7 +1,7 @@
 name: cleanup
 on:
   workflow_run:
-    workflows: ["docker build"]
+    workflows: ["docker1 build1"]
     types:
       - completed
 
