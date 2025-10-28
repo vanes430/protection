@@ -39,11 +39,11 @@ RUN case "${TARGETARCH}" in \
 
 RUN useradd -m -d /home/container container
 
-ENV LANG="en_US.UTF-8" \
-    LANGUAGE="en_US:en" \
-    LC_ALL="en_US.UTF-8" \
-    JAVA_HOME="/opt/graalvm" \
-    PATH="$JAVA_HOME/bin:$PATH"
+ENV LANG=en_US.UTF-8
+ENV LANGUAGE=en_US:en
+ENV LC_ALL=en_US.UTF-8
+ENV JAVA_HOME=/opt/graalvm
+ENV PATH=/opt/graalvm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 USER container
 ENV USER="container" \
