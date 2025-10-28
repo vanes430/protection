@@ -14,7 +14,9 @@ jobs:
 
     steps:
       - name: Delete all untagged and non-latest versions
-        uses: actions/delete-package-versions@v4
+        uses: actions/delete-package-versions@v5
         with:
           package-name: protection
           delete-only-untagged-versions: true
+          num-old-versions-to-delete: 0
+          min-versions-to-keep: 0
