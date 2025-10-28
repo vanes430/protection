@@ -19,4 +19,4 @@ jobs:
           package-name: protection
           package-type: container
           delete-only-untagged-versions: true
-          min-versions-to-keep: 0
+          min-versions-to-keep: 1
