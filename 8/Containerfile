@@ -5,25 +5,39 @@
 # ╚████╔╝ ██║  ██║██║ ╚████║███████╗███████║     ██║██████╔╝╚██████╔╝
 #  ╚═══╝  ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚══════╝     ╚═╝╚═════╝  ╚═════╝ 
 # Pterodactyl Image created by vanes430
+# syntax=docker/dockerfile:1.5
+FROM --platform=$TARGETOS/$TARGETARCH azul/zulu-openjdk-debian:8-latest
 
-FROM --platform=$TARGETOS/$TARGETARCH bellsoft/liberica-openjdk-debian:8
-
-LABEL author="vanes430" maintainer="admin@vanes430.my.id"
-LABEL org.opencontainers.image.licenses=MIT
-LABEL org.opencontainers.image.source="https://github.com/vanes430/protection"
-LABEL org.opencontainers.image.description="Pterodactyl Image created by vanes430"
+LABEL author="vanes430" \
+      maintainer="admin@vanes430.my.id" \
+      org.opencontainers.image.licenses="MIT" \
+      org.opencontainers.image.source="https://github.com/vanes430/protection" \
+      org.opencontainers.image.description="Pterodactyl Image created by vanes430"
 
 RUN apt-get update && apt-get install -y \
-    fontconfig iproute2 openssl sqlite3 tar passwd udev wget curl \
+        fontconfig \
+        iproute2 \
+        openssl \
+        sqlite3 \
+        tar \
+        passwd \
+        udev \
+        fonts-noto-color-emoji \
+        fonts-noto \
+        fonts-dejavu-core \
+    && apt-get clean && rm -rf /var/lib/apt/lists/* \
     && useradd -m -d /home/container container
 
-ENV LANG=en_US.UTF-8
-ENV LANGUAGE=en_US:en
-ENV LC_ALL=en_US.UTF-8
+ENV LANG="en_US.UTF-8" \
+    LANGUAGE="en_US:en" \
+    LC_ALL="en_US.UTF-8"
 
 USER container
-ENV USER=container HOME=/home/container
+ENV USER="container" \
+    HOME="/home/container"
 WORKDIR /home/container
 
 COPY ../entrypoint /entrypoint
-CMD [ "/entrypoint" ]
+RUN chmod +x /entrypoint
+
+ENTRYPOINT ["/entrypoint"]
