@@ -1,9 +1,9 @@
 name: docker build
 on:
-  workflow_dispatch:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: ["update entrypoint"]   # nama workflow pertama
+    types:
+      - completed
 jobs:
   push:
     name: "protection:java_${{ matrix.tag }}"
