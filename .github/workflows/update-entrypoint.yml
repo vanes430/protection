@@ -1,4 +1,4 @@
-name: Update Entrypoint
+name: update entrypoint
 
 on:
   workflow_dispatch: # Manual trigger only
