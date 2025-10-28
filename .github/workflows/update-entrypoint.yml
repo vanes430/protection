@@ -16,21 +16,18 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Download entrypoint file from protection release
+      - name: Download entrypoint from protection release
         run: |
-          echo "🔽 Fetching latest entrypoint..."
           curl -L https://github.com/vanes430/protection/releases/download/release/entrypoint -o entrypoint
           chmod +x entrypoint
-          echo "✅ entrypoint updated and made executable"
 
       - name: Commit and push updated entrypoint
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLIC_REPO_TOKEN: ${{ secrets.PUBLIC_REPO_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
           git add entrypoint
-          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          git diff --cached --quiet && exit 0
           git commit -m "chore: update entrypoint from protection release"
-          git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git HEAD:main
+          git push https://x-access-token:${PUBLIC_REPO_TOKEN}@github.com/${{ github.repository }}.git HEAD:main
