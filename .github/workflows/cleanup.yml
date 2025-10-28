@@ -13,7 +13,7 @@ jobs:
       contents: read
 
     steps:
-      - name: Delete all untagged and non-latest versions
+      - name: Cleanup Everything
         uses: actions/delete-package-versions@v5
         with:
           package-name: protection
