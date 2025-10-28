@@ -50,7 +50,7 @@ ENV USER="container" \
     HOME="/home/container"
 WORKDIR /home/container
 
-COPY ../entrypoint /entrypoint
+COPY entrypoint /entrypoint
 RUN chmod +x /entrypoint
 
 ENTRYPOINT ["/entrypoint"]
