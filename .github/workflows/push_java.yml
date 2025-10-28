@@ -36,7 +36,5 @@ jobs:
         with:
           context: ./
           file: ./${{ matrix.tag }}/Containerfile
-          platforms: linux/amd64,linux/arm64
           push: true
-          tags: |
-            ghcr.io/vanes430/protection:java_${{ matrix.tag }}
+          tags: ghcr.io/vanes430/protection:java_${{ matrix.tag }}
