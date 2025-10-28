@@ -1,9 +1,6 @@
 name: update entrypoint
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
 
 permissions:
@@ -11,8 +8,6 @@ permissions:
 
 jobs:
   update-entrypoint:
-    # hanya jalan kalau actor == owner repo
-    if: github.actor == github.repository_owner
     runs-on: ubuntu-latest
 
     steps:
