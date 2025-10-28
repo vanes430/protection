@@ -1,7 +1,7 @@
 name: cleanup
 on:
   workflow_run:
-    workflows: ["docker build"]   # nama workflow pertama
+    workflows: ["docker build"]
     types:
       - completed
 
@@ -17,6 +17,6 @@ jobs:
         uses: actions/delete-package-versions@v5
         with:
           package-name: protection
+          package-type: container
           delete-only-untagged-versions: true
-          num-old-versions-to-delete: 0
           min-versions-to-keep: 0
