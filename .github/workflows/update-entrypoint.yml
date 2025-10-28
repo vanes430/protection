@@ -1,33 +1,53 @@
-name: update entrypoint
+name: Update Entrypoint
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: # Manual trigger only
 
 permissions:
-  contents: write
+  contents: write # Needed to push changes
 
 jobs:
   update-entrypoint:
+    # Only allow the repository owner to run this workflow
     if: github.actor == github.repository_owner
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout current repo
+      # ✅ Step 1: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          persist-credentials: false
+          persist-credentials: false # Disable default credentials for manual control
 
-      - name: Download entrypoint from protection release
+      # ✅ Step 2: Download the latest entrypoint file from protection release
+      - name: Download latest entrypoint
         run: |
+          echo "🔽 Downloading entrypoint from protection release..."
           curl -L https://github.com/vanes430/protection/releases/download/release/entrypoint -o entrypoint
           chmod +x entrypoint
+          echo "✅ Downloaded and set executable permission."
+
+      # ✅ Step 3: Commit and push the updated entrypoint if changed
       - name: Commit and push updated entrypoint
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
         run: |
+          echo "🧩 Setting up Git..."
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          echo "📦 Checking for changes..."
           git add entrypoint
-          git diff --cached --quiet && exit 0
+
+          # Exit early if no changes detected
+          git diff --cached --quiet && echo "No changes to commit. Exiting." && exit 0
+
+          echo "📝 Committing changes..."
           git commit -m "chore: update entrypoint from protection release"
-          git push
+
+          echo "🚀 Pushing to repository..."
+          # Set the remote URL with token authentication
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${REPO}
+          git push origin HEAD
+          echo "✅ Entrypoint successfully updated and pushed!"
