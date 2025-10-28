@@ -1,4 +1,4 @@
-name: cleanup
+name: update entrypoint
 on:
   workflow_run:
     workflows: ["docker1 build1"]
@@ -18,5 +18,5 @@ jobs:
         with:
           package-name: protection
           package-type: container
-          delete-only-untagged-versions: true
-          min-versions-to-keep: 1
+          delete-only-untagged-versions: false
+          min-versions-to-keep: 0
